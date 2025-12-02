@@ -3,12 +3,12 @@
   "build": {
     "builder": "NIXPACKS",
     "buildCommand": "cd frontend && npm install && npm run build",
-    "runCommand": "cd backend && npm start",
-    "nixpacksConfigPath": "./nixpacks.toml"
+    "outputDirectory": "frontend/dist"
   },
   "deploy": {
-    "startCommand": "cd backend && node server.js",
-    "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
+    "startCommand": "cd backend && npm start",
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 60,
+    "restartPolicyType": "ALWAYS"
   }
 }
