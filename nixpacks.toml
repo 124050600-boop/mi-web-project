@@ -11,9 +11,3 @@ cmds = [
 
 [start]
 cmd = "cd backend && node server.js"
-
-[environment]
-NODE_ENV = "production"
-
-[variables]
-PORT = "3000"
